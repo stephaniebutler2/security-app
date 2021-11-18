@@ -1,0 +1,25 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" controllerName="ui5_ns.security_ui5.controller.View1" displayBlock="true" id="adminTab">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<IconTabBar selectedKey="__xmlview0--filter17" id="iconBar">
+						<items>
+							<IconTabFilter text="Table" icon="sap-icon://table-view" iconColor="Critical" id="filter17">
+								<content>
+									<sap.ui.layout:HorizontalLayout xmlns:sap.ui.layout="sap.ui.layout" id="layout0">
+									    <sap.ui.layout:content>
+									        <Button xmlns="sap.m" text="READ Scope" id="button2" press="buttonRead"/>
+									        <Button xmlns="sap.m" text="EDIT Scope" id="button1" press="buttonEdit"/>
+									    </sap.ui.layout:content>
+									</sap.ui.layout:HorizontalLayout>
+									<sap.ui.comp.smarttable:SmartTable xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" xmlns:sap.ui.comp.smarttable="sap.ui.comp.smarttable" width="100%" direction="Column" fitContainer="true" tableType="ResponsiveTable" header="Smart Table" enableAutoBinding="true" id="sTable" entitySet="Airports" initiallyVisibleFields="airportCode,airportName,city,country,altitude,offsetUTC,passengers"/>
+								</content>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

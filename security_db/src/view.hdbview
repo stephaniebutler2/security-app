@@ -1,0 +1,5 @@
+VIEW "V_TEST_AIRPORT"
+AS 
+SELECT "airportCode", "airportName", "city", "country"
+FROM "tables.T_Airports"
+WHERE "country" = SESSION_CONTEXT('XS_COUNTRY')

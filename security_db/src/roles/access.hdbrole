@@ -1,0 +1,11 @@
+{
+	"role": {
+		"name": "access",
+		"schema_privileges": [{
+			"privileges": ["SELECT"]
+		}],
+		"schema_analytic_privileges": [{
+			"privileges": ["AP_TEST"]
+		}]
+	}
+}

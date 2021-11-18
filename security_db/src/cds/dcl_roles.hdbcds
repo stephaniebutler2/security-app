@@ -1,0 +1,25 @@
+using "views.V_Airports" as V_Airports;
+using "views.V_CV_Airports" as CV_Airports;
+
+accesspolicy dcl {
+    role airportCountry {
+        grant
+            select on V_Airports
+        where
+            country in $env.user.COUNTRY;
+    };
+    role airportCountryAll {
+        grant
+            select on V_Airports;
+    };
+    // role cvAirportCountry {
+    //     grant
+    //         select on CV_Airports
+    //     where
+    //         CC_USER in $env.user.value;
+    // };
+    // role cvAirportCountryAll {
+    //     grant
+    //         select on CV_Airports;
+    // };
+}

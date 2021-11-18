@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns:core='sap.ui.core'>
+	<IconTabFilter xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="Admin" icon="sap-icon://wrench"
+		iconColor="Positive" id="filter18">
+		<content>
+			<Panel xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" width="auto" expandable="true" expanded="true"
+				id="panel0">
+				<headerToolbar>
+					<Toolbar id="toolbar2">
+						<Title text="Header"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://settings"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<Text text="Panel Content" id="text2"/>
+					<Button xmlns="sap.m" text="Button" id="button1" press="buttonRead"/>
+					<Button xmlns="sap.m" text="Button" id="button2" press="buttonRead"/>
+					<Button xmlns="sap.m" text="Button" id="button3" press="buttonRead"/>
+				</content>
+			</Panel>
+		</content>
+	</IconTabFilter>
+</core:FragmentDefinition>

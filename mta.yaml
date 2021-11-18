@@ -1,0 +1,50 @@
+ID: security-app
+_schema-version: '2.1'
+version: 0.0.1
+modules:
+  - name: security_db
+    type: hdb
+    path: security_db
+    requires:
+      - name: hdi_security_db
+  - name: security_node
+    type: nodejs
+    path: security_node
+    provides:
+      - name: security_node_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: hdi_security_db
+      - name: security-uaa
+      - name: myauditlog
+  - name: security_ui5
+    type: html5
+    path: security_ui5
+    requires:
+      - name: security_node_api
+        group: destinations
+        properties:
+          name: node-be
+          url: '~{url}'
+          forwardAuthToken: true
+      - name: security-uaa
+    parameters:
+      port: 51999
+resources:
+  - name: hdi_security_db
+    parameters:
+      config:
+        schema: SECURITY_DB
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: security-uaa
+    type: com.sap.xs.uaa
+    parameters:
+      path: xs-security.json
+  - name: myauditlog
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: auditlog
+      service-plan: free

@@ -1,0 +1,51 @@
+using "tables.T_Airports" as Airports;
+using "CV_Airports" as CV_Airports;
+
+@OData.publish : true
+context views {
+    /*@@layout{"layoutInfo":{}}*/
+    view V_Airports as
+        select from Airports
+        {
+            key airportCode  as airportCode,
+                airportName,
+                city,
+                country,
+                altitude,
+                offsetUTC,
+                passengers
+        }
+        // ;
+        with structured privilege check;
+
+	// ignore
+    view V_Airports2 as
+        select from Airports
+        {
+            key airportCode  as airportCode,
+                airportName,
+                city,
+                country,
+                altitude,
+                offsetUTC,
+                passengers
+        };
+        // where
+        //     country in SESSION_CONTEXT('XS_COUNTRY');
+
+    view V_CV_Airports as
+        select from CV_Airports
+        {
+            key airportCode           as airportCode,
+                airportName,
+                city,
+                country,
+                altitude,
+                offsetUTC,
+                passengers,
+                CC_DOUBLE_PASSENGERS,
+                CC_USER
+        }
+        ;
+        // with structured privilege check;
+};
