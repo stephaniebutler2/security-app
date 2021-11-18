@@ -9,7 +9,6 @@
 		"@sap/xssec": "x",
 		"body-parser": "x",
 		"form-data": "x",
-		
 		"passport": "x",
 		"@sap/logging": "x"
 	},
