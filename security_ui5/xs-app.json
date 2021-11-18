@@ -1,0 +1,22 @@
+{
+	"welcomeFile": "webapp/index.html",
+	"authenticationMethod": "route",
+	"routes": [{
+		"source": "/api(.*)",
+		"destination": "node-be",
+		"authenticationType": "xsuaa"
+	},{
+		"source": "(.*)example_odata(.*)",
+		"destination": "node-be",
+		"authenticationType": "xsuaa",
+		"scope": "$XSAPPNAME.EDIT"
+	}, {
+		"source": "(.*).xsodata(.*)",
+		"destination": "node-be",
+		"authenticationType": "xsuaa"
+	},{
+		"source": "(.*).xsjs(.*)",
+		"destination": "node-be",
+		"authenticationType": "xsuaa"
+	}]
+}

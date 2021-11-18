@@ -1,0 +1,6 @@
+service{
+	"views.V_Airports" as "Airports" key("airportCode");
+	"views.V_Airports2" as "Airports2" key("airportCode");
+	"views.V_CV_Airports" as "CV_Airports" key("airportCode");
+	"V_TEST_AIRPORT" as "V_TEST_AIRPORT";
+}

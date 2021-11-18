@@ -1,0 +1,28 @@
+{
+	"xsappname": "security-app",
+	"scopes": [{
+		"name": "$XSAPPNAME.READ",
+		"description": "Read data"
+	}, {
+		"name": "$XSAPPNAME.EDIT",
+		"description": "Edit data"
+	}, {
+		"name": "$XSAPPNAME.RUN",
+		"description": "Run the app"
+	}],
+	"attributes": [{
+		"name": "COUNTRY",
+		"description": "Field restriction",
+		"valueType": "string"
+	}],
+	"role-templates": [{
+		"name": "SECURITY_COUNTRY",
+		"description": "Template for reading sandbox",
+		"scope-references": ["$XSAPPNAME.READ"],
+		"attribute-references": ["COUNTRY"]
+	}, {
+		"name": "SECURITY_ADMIN",
+		"scope-references": ["$XSAPPNAME.RUN", "$XSAPPNAME.READ", "$XSAPPNAME.EDIT"],
+		"attribute-references": ["COUNTRY"]
+	}]
+}

@@ -1,0 +1,19 @@
+PROCEDURE "SP_GET_COUNTRY_FILTER"( out res NVARCHAR(128))
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY DEFINER
+   --DEFAULT SCHEMA <default_schema_name>
+   READS SQL DATA AS
+BEGIN
+   /*************************************
+       Write your procedure logic 
+   *************************************/
+   
+   --json = SELECT SESSION_CONTEXT('XS_COUNTRY') AS COUNTRY FROM "SYS"."DUMMY";
+   --countryJson = JSON_VALUE(:json, '$[0].COUNTRY');
+   --countryJson = 'France'
+   --res = CONCAT('country = ', :countryJson);
+   
+   
+   res = 'country = France';
+   --"country" = (JSON_VALUE((SELECT SESSION_CONTEXT('XS_COUNTRY') AS COUNTRY FROM DUMMY), '$[0].COUNTRY'))
+END
