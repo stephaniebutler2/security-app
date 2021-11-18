@@ -9,7 +9,7 @@
 		"@sap/xssec": "x",
 		"body-parser": "x",
 		"form-data": "x",
-		"dotenv": "x",
+		
 		"passport": "x",
 		"@sap/logging": "x"
 	},
